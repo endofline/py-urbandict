@@ -34,7 +34,7 @@ class UrbanDictParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
 
-        if tag != "div":
+        if not tag in ("div", "a"):
             return
 
         div_class = attrs_dict.get('class')
